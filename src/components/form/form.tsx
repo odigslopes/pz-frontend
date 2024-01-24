@@ -1,6 +1,6 @@
 'use client';
 
-import { FormControl, FormLabel, IconButton, Input, VStack } from '@chakra-ui/react';
+import { FormControl, FormLabel, IconButton, Input, InputGroup, InputRightElement, VStack } from '@chakra-ui/react';
 import { PlusSquare } from 'lucide-react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -37,25 +37,30 @@ export function Form() {
   return (
     <VStack as="form" onSubmit={onSubmit}>
       <FormControl>
-        <FormLabel margin={0} fontSize="xs" color="#FCF7F8">
-          workshopID
+        <FormLabel fontSize="xs" color="#FCF7F8">
+          Workshop ID
         </FormLabel>
-        <Input
-          {...register('workshopId')}
-          fontSize="xs"
-          placeholder="Insira o workshopID"
-          _placeholder={{ color: '#FCF7F8' }}
-        />
+        <InputGroup>
+          <Input
+            {...register('workshopId')}
+            fontSize="xs"
+            placeholder="Insira o Workshop ID"
+            _placeholder={{ color: '#FCF7F8' }}
+          />
+          <InputRightElement>
+            <IconButton
+              bg="#3AD5F8"
+              color="white"
+              size="md"
+              aria-label="digite o id do mod"
+              icon={<PlusSquare size={20} />}
+              type="submit"
+              isLoading={isLoading}
+              borderLeftRadius="none"
+            />
+          </InputRightElement>
+        </InputGroup>
       </FormControl>
-      <IconButton
-        bg="#3AD5F8"
-        color="white"
-        size="md"
-        aria-label="digite o id do mod"
-        icon={<PlusSquare size={20} />}
-        type="submit"
-        isLoading={isLoading}
-      />
     </VStack>
   );
 }
