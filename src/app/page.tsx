@@ -19,18 +19,32 @@ const getData = async () => {
 export default async function Home() {
   const data: IMod[] = await getData();
   return (
-    <VStack borderWidth="2px" borderColor="green">
-      <ColorMode />
-      <Form />
+    <VStack padding={6}>
+      <Heading>Consulta mods por ID</Heading>
+      <HStack spacing="0" justify="space-between" width="100%" padding={4}>
+        <HStack flex={1} justify="center" align="center">
+          <Form />
+        </HStack>
+        <ColorMode />
+      </HStack>
       <SimpleGrid columns={[1, 2, 3, 4]} spacing={4} alignItems="flex-start" textAlign="justify">
         {data.map((mod) => (
-          <VStack key={mod.id} height="100%" spacing={4} padding={4} borderWidth="2px" borderColor="yellow">
+          <VStack
+            key={mod.id}
+            height="100%"
+            spacing={4}
+            padding={4}
+            borderWidth="2px"
+            borderColor="gray.400"
+            borderRadius={8}
+          >
             <Image src={mod.imageUrl} width={120} height={120} alt="image avatar" />
             <HStack>
-              <Heading as="h1" size="sm">
+              <Heading as="h1" size="sm" textTransform="uppercase">
                 {mod.title}
               </Heading>
               <IconButton
+                color="#3AD5F8"
                 as={Link}
                 variant="ghost"
                 aria-label="..."
