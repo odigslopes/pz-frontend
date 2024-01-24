@@ -1,4 +1,4 @@
-import { Box, HStack, Link, Spacer } from '@chakra-ui/react';
+import { Box, HStack, Link } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
 import { ColorMode } from '../color-mode';

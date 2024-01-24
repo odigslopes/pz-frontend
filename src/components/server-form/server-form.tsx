@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, FormControl, FormErrorMessage, FormLabel, Heading, Input, VStack } from '@chakra-ui/react';
+import { Button, FormControl, FormErrorMessage, FormLabel, Input, VStack } from '@chakra-ui/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { ArrowDownToLine } from 'lucide-react';
 import { useState } from 'react';
