@@ -2,6 +2,10 @@
 
 import { revalidateTag } from 'next/cache';
 
-export async function revalidate() {
-  revalidateTag('mods');
+interface RevalidateProps {
+  tag: string;
+}
+
+export async function revalidate({ tag }: RevalidateProps) {
+  revalidateTag(tag);
 }
