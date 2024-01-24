@@ -5,6 +5,7 @@ export const theme = extendTheme({
   styles: {
     global: (props: StyleFunctionProps) => ({
       body: {
+        height: '100vh',
         bg: mode('#086788', '#2D3748')(props),
       },
     }),
@@ -17,6 +18,12 @@ export const theme = extendTheme({
     },
     Text: {
       baseStyle: {
+        color: '#FCF7F8',
+      },
+    },
+    FormLabel: {
+      baseStyle: {
+        fontSize: 'md',
         color: '#FCF7F8',
       },
     },
