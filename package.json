@@ -31,12 +31,14 @@
     "@chakra-ui/theme-tools": "2.1.2",
     "@emotion/react": "11.11.3",
     "@emotion/styled": "11.11.0",
+    "@hookform/resolvers": "3.3.4",
     "framer-motion": "10.18.0",
     "lucide-react": "0.311.0",
     "next": "14.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "7.49.3"
+    "react-hook-form": "7.49.3",
+    "zod": "3.22.4"
   },
   "devDependencies": {
     "@commitlint/cli": "18.4.4",
