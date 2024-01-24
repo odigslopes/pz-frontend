@@ -2,7 +2,6 @@ import { Heading, HStack, IconButton, Link, SimpleGrid, Text, VStack } from '@ch
 import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 
-import { ColorMode } from '@/components/color-mode';
 import { Form } from '@/components/form';
 import { IMod } from '@/types/IMod';
 
@@ -25,7 +24,6 @@ export default async function Home() {
         <HStack flex={1} justify="center" align="center">
           <Form />
         </HStack>
-        <ColorMode />
       </HStack>
       <SimpleGrid columns={[1, 2, 3, 4]} spacing={4} alignItems="flex-start" textAlign="justify">
         {data.map((mod) => (
