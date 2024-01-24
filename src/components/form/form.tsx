@@ -26,7 +26,7 @@ export function Form() {
         body: JSON.stringify(payload),
       });
 
-      revalidate();
+      revalidate({ tag: 'mods' });
     } catch (error) {
       console.log(error);
     } finally {
