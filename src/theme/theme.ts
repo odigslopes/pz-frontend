@@ -5,20 +5,19 @@ export const theme = extendTheme({
   styles: {
     global: (props: StyleFunctionProps) => ({
       body: {
-        bg: mode('white', '#2D3748')(props),
-        input: mode('red', 'green')(props),
+        bg: mode('#086788', '#2D3748')(props),
       },
     }),
   },
   components: {
     Heading: {
       baseStyle: {
-        color: '#72727e',
+        color: '#FCF7F8',
       },
     },
     Text: {
       baseStyle: {
-        color: '#9893da',
+        color: '#FCF7F8',
       },
     },
   },
