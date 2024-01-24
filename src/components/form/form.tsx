@@ -37,11 +37,20 @@ export function Form() {
   return (
     <VStack as="form" onSubmit={onSubmit}>
       <FormControl>
-        <FormLabel>Digite workshopID</FormLabel>
-        <Input {...register('workshopId')} placeholder="workshopID" />
+        <FormLabel margin={0} fontSize="xs" color="#FCF7F8">
+          workshopID
+        </FormLabel>
+        <Input
+          {...register('workshopId')}
+          fontSize="xs"
+          placeholder="Insira o workshopID"
+          _placeholder={{ color: '#FCF7F8' }}
+        />
       </FormControl>
       <IconButton
-        size="lg"
+        bg="#3AD5F8"
+        color="white"
+        size="md"
         aria-label="digite o id do mod"
         icon={<PlusSquare size={20} />}
         type="submit"
