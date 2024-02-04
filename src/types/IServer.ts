@@ -3,4 +3,5 @@ export interface IServer {
   serverName: string;
   ipAddress: string;
   port: number;
+  steamMods: any[];
 }
