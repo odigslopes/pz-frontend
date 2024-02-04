@@ -1,11 +1,12 @@
-import { Heading, HStack, Text, VStack } from '@chakra-ui/react';
-import { Server } from 'lucide-react';
+import { Heading, HStack, IconButton, Text, VStack } from '@chakra-ui/react';
+import { ArrowUpRightFromSquare, Server } from 'lucide-react';
+import NextLink from 'next/link';
 
 import { ServerForm } from '@/components/server-form';
 import { IServer } from '@/types/IServer';
 
 const getData = async () => {
-  const data = await fetch('https://dolphin-app-u66b7.ondigitalocean.app/server-configurations', {
+  const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/server-configurations`, {
     method: 'GET',
     next: {
       tags: ['server'],
@@ -33,14 +34,24 @@ export default async function ServerPage() {
             borderRadius={8}
           >
             <Server color="#3AD5F8" size={20} />
-            <VStack align="start" spacing={2}>
-              <Heading as="h1" size="xs" textTransform="uppercase">
-                {server.serverName}
-              </Heading>
-              <Text>
-                IP: {server.ipAddress}:{server.port}
-              </Text>
-            </VStack>
+            <HStack width="full" justifyContent="space-between">
+              <VStack align="start" spacing={2}>
+                <Heading as="h1" size="xs" textTransform="uppercase">
+                  {server.serverName}
+                </Heading>
+                <Text>
+                  IP: {server.ipAddress}:{server.port}
+                </Text>
+              </VStack>
+              <IconButton
+                aria-label="open"
+                icon={<ArrowUpRightFromSquare />}
+                as={NextLink}
+                href={`/server/${server.id}`}
+                variant="ghost"
+                color="white"
+              />
+            </HStack>
           </HStack>
         ))}
       </VStack>
