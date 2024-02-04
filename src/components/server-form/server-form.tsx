@@ -39,7 +39,7 @@ export function ServerForm() {
         ...data,
         port: Number(data.port),
       };
-      await fetch('https://dolphin-app-u66b7.ondigitalocean.app/server-configurations', {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/server-configurations`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
