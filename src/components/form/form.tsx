@@ -18,7 +18,7 @@ export function Form() {
         workshopId: Number(data.workshopId),
       };
 
-      await fetch('https://dolphin-app-u66b7.ondigitalocean.app/steam', {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/steam`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
